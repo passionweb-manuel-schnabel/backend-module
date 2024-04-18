@@ -6,6 +6,8 @@ Shows the basic structure of a backend module (TYPO3 CMS)
 
 1.0.0: Register a simple backend module
 
+1.1.0: Add a custom button bar to the backend module
+
 ## Installation
 
 * Add repository to your composer.json
