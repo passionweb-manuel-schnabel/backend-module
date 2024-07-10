@@ -10,6 +10,8 @@ Shows the basic structure of a backend module (TYPO3 CMS)
 
 1.2.0: Add simple javascript module to dashboard action
 
+1.3.0: Add multistep wizard example
+
 ## Installation
 
 * Add repository to your composer.json

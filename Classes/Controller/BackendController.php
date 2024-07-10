@@ -49,18 +49,9 @@ class BackendController extends ActionController
         return $this->htmlResponse($this->moduleTemplate->render());
     }
 
-    public function buttonOneAction(): ResponseInterface
+    public function multiStepWizardAction(): ResponseInterface
     {
-        return $this->htmlResponse($this->moduleTemplate->render());
-    }
-
-    public function buttonTwoAction(): ResponseInterface
-    {
-        return $this->htmlResponse($this->moduleTemplate->render());
-    }
-
-    public function buttonThreeAction(): ResponseInterface
-    {
+        $this->pageRenderer->loadJavaScriptModule('@passionweb/backend-module/backend/multi-step-wizard.js');
         return $this->htmlResponse($this->moduleTemplate->render());
     }
 
@@ -79,27 +70,15 @@ class BackendController extends ActionController
 
         $buttonBar = $this->moduleTemplate->getDocHeaderComponent()->getButtonBar();
 
-        // dashboard button
+        // Dashboard button
         $url = (string)$this->backendUriBuilder->buildUriFromRoute($moduleName, $uriParameters);
         $button = $this->buildButton('actions-menu', 'Dashboard', 'btn-md btn-primary rounded', $url);
         $buttonBar->addButton($button);
 
-        // button one
-        $uriParameters['action'] = 'buttonOne';
+        // MultiStepWizard button
+        $uriParameters['action'] = 'multiStepWizard';
         $url = (string)$this->backendUriBuilder->buildUriFromRoute($moduleName, $uriParameters);
-        $button = $this->buildButton('actions-file-text', 'Button One', 'btn-md btn-secondary mx-2 rounded', $url);
-        $buttonBar->addButton($button);
-
-        // button two
-        $uriParameters['action'] = 'buttonTwo';
-        $url = (string)$this->backendUriBuilder->buildUriFromRoute($moduleName, $uriParameters);
-        $button = $this->buildButton('actions-file-text', 'Button Two', 'btn-md btn-secondary rounded', $url);
-        $buttonBar->addButton($button);
-
-        // button three
-        $uriParameters['action'] = 'buttonThree';
-        $url = (string)$this->backendUriBuilder->buildUriFromRoute($moduleName, $uriParameters);
-        $button = $this->buildButton('actions-file-text', 'Button Three', 'btn-md btn-secondary mx-2 rounded', $url);
+        $button = $this->buildButton('actions-file-text', 'MultiStepWizard', 'btn-md btn-secondary mx-2 rounded', $url);
         $buttonBar->addButton($button);
     }
 

@@ -11,7 +11,7 @@ return [
         'labels' => 'LLL:EXT:backend_module/Resources/Private/Language/locallang_mod.xlf',
         'extensionName' => 'BackendModule',
         'controllerActions' => [
-            \Passionweb\BackendModule\Controller\BackendController::class => 'dashboard, buttonOne, buttonTwo, buttonThree',
+            \Passionweb\BackendModule\Controller\BackendController::class => 'dashboard, multiStepWizard',
         ],
     ]
 ];
