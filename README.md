@@ -8,6 +8,8 @@ Shows the basic structure of a backend module (TYPO3 CMS)
 
 1.1.0: Add a custom button bar to the backend module
 
+1.2.0: Add simple javascript module to dashboard action
+
 ## Installation
 
 * Add repository to your composer.json

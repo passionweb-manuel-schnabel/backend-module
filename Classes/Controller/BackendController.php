@@ -11,6 +11,7 @@ use TYPO3\CMS\Backend\Template\ModuleTemplate;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
 use TYPO3\CMS\Core\Imaging\Icon;
 use TYPO3\CMS\Core\Imaging\IconFactory;
+use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
@@ -22,7 +23,8 @@ class BackendController extends ActionController
     public function __construct(
         protected ModuleTemplateFactory $moduleTemplateFactory,
         protected UriBuilder $backendUriBuilder,
-        protected IconFactory $iconFactory
+        protected IconFactory $iconFactory,
+        protected PageRenderer $pageRenderer
     )
     {
     }
@@ -43,6 +45,7 @@ class BackendController extends ActionController
 
     public function dashboardAction(): ResponseInterface
     {
+        $this->pageRenderer->loadJavaScriptModule('@passionweb/backend-module/backend/dashboard.js');
         return $this->htmlResponse($this->moduleTemplate->render());
     }
 
