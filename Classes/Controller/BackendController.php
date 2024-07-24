@@ -89,7 +89,7 @@ class BackendController extends ActionController
         // AjaxRequest button
         $uriParameters['action'] = 'ajaxRequest';
         $url = (string)$this->backendUriBuilder->buildUriFromRoute($moduleName, $uriParameters);
-        $button = $this->buildButton('actions-file-text', 'AJAX Reequest', 'btn-md btn-secondary rounded', $url);
+        $button = $this->buildButton('actions-file-text', 'AJAX Request', 'btn-md btn-secondary rounded', $url);
         $buttonBar->addButton($button);
     }
 
