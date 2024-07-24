@@ -12,6 +12,8 @@ Shows the basic structure of a backend module (TYPO3 CMS)
 
 1.3.0: Add multistep wizard example
 
+1.4.0: Add sample AJAX request
+
 ## Installation
 
 * Add repository to your composer.json
