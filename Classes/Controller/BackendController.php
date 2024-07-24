@@ -54,6 +54,11 @@ class BackendController extends ActionController
         $this->pageRenderer->loadJavaScriptModule('@passionweb/backend-module/backend/multi-step-wizard.js');
         return $this->htmlResponse($this->moduleTemplate->render());
     }
+    public function ajaxRequestAction(): ResponseInterface
+    {
+        $this->pageRenderer->loadJavaScriptModule('@passionweb/backend-module/backend/ajax-request.js');
+        return $this->htmlResponse($this->moduleTemplate->render());
+    }
 
     /**
      * @throws RouteNotFoundException
@@ -79,6 +84,12 @@ class BackendController extends ActionController
         $uriParameters['action'] = 'multiStepWizard';
         $url = (string)$this->backendUriBuilder->buildUriFromRoute($moduleName, $uriParameters);
         $button = $this->buildButton('actions-file-text', 'MultiStepWizard', 'btn-md btn-secondary mx-2 rounded', $url);
+        $buttonBar->addButton($button);
+
+        // AjaxRequest button
+        $uriParameters['action'] = 'ajaxRequest';
+        $url = (string)$this->backendUriBuilder->buildUriFromRoute($moduleName, $uriParameters);
+        $button = $this->buildButton('actions-file-text', 'AJAX Reequest', 'btn-md btn-secondary rounded', $url);
         $buttonBar->addButton($button);
     }
 
