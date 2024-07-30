@@ -8,19 +8,19 @@ class Notifications {
 
         let successBtn = document.querySelector('#showSuccessNotification');
         successBtn.addEventListener('click', () => {
-            Notification.success('This is a success message', 'This is a success message', 5);
+            Notification.success(TYPO3.lang['notification.successMessage'], TYPO3.lang['notification.successMessage'], 5);
         });
         let infoBtn = document.querySelector('#showInfoNotification');
         infoBtn.addEventListener('click', () => {
-            Notification.info('This is an info message', 'This is an info message', 5);
+            Notification.info(TYPO3.lang['notification.infoMessage'], TYPO3.lang['notification.infoMessage'], 5);
         });
         let warningBtn = document.querySelector('#showWarningNotification');
         warningBtn.addEventListener('click', () => {
-            Notification.warning('This is a warning message', 'This is a warning message', 5);
+            Notification.warning(TYPO3.lang['notification.warningMessage'], TYPO3.lang['notification.warningMessage'], 5);
         });
         let errorBtn = document.querySelector('#showErrorNotification');
         errorBtn.addEventListener('click', () => {
-            Notification.error('This is a warning message', 'This is a warning message', 5);
+            Notification.error(TYPO3.lang['notification.errorMessage'], TYPO3.lang['notification.errorMessage'], 5);
         });
     }
 }
