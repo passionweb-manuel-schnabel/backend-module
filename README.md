@@ -6,17 +6,19 @@ Shows the basic structure of a backend module (TYPO3 CMS)
 
 1.0.0: Register a simple backend module
 
-1.1.0: Add a custom button bar to the backend module
+1.1.0: Added a custom button bar to the backend module
 
-1.2.0: Add simple javascript module to dashboard action
+1.2.0: Added simple javascript module to dashboard action
 
-1.3.0: Add multistep wizard example
+1.3.0: Added multistep wizard example
 
-1.4.0: Add sample AJAX request
+1.4.0: Added sample AJAX request
 
-1.5.0: Add Notification API examples
+1.5.0: Added Notification API examples
 
-1.6.0: Add inline language file
+1.6.0: Added inline language file
+
+1.7.0 Added example for dynamic imports in javascript
 
 ## Installation
 

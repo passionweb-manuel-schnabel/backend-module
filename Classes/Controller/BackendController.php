@@ -65,6 +65,11 @@ class BackendController extends ActionController
         $this->pageRenderer->loadJavaScriptModule('@passionweb/backend-module/backend/notifications.js');
         return $this->htmlResponse($this->moduleTemplate->render());
     }
+    public function dynamicImportAction(): ResponseInterface
+    {
+        $this->pageRenderer->loadJavaScriptModule('@passionweb/backend-module/backend/dynamic-import.js');
+        return $this->htmlResponse($this->moduleTemplate->render());
+    }
 
     /**
      * @throws RouteNotFoundException
@@ -97,10 +102,17 @@ class BackendController extends ActionController
         $url = (string)$this->backendUriBuilder->buildUriFromRoute($moduleName, $uriParameters);
         $button = $this->buildButton('actions-file-text', 'AJAX Request', 'btn-md btn-secondary rounded', $url);
         $buttonBar->addButton($button);
+
         // Notifications button
         $uriParameters['action'] = 'notifications';
         $url = (string)$this->backendUriBuilder->buildUriFromRoute($moduleName, $uriParameters);
         $button = $this->buildButton('actions-file-text', 'Notification API', 'btn-md btn-secondary mx-2 rounded', $url);
+        $buttonBar->addButton($button);
+
+        // Dynamic import button
+        $uriParameters['action'] = 'dynamicImport';
+        $url = (string)$this->backendUriBuilder->buildUriFromRoute($moduleName, $uriParameters);
+        $button = $this->buildButton('actions-file-text', 'Dynamic Imports in JS', 'btn-md btn-secondary rounded', $url);
         $buttonBar->addButton($button);
     }
 
