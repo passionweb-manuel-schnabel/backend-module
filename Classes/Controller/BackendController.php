@@ -2,6 +2,7 @@
 
 namespace Passionweb\BackendModule\Controller;
 
+use Passionweb\BackendModule\Template\Components\Buttons\CustomLinkButton;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Backend\Module\ModuleData;
 use TYPO3\CMS\Backend\Routing\Exception\RouteNotFoundException;
@@ -70,6 +71,10 @@ class BackendController extends ActionController
         $this->pageRenderer->loadJavaScriptModule('@passionweb/backend-module/backend/dynamic-import.js');
         return $this->htmlResponse($this->moduleTemplate->render());
     }
+    public function customTemplateButtonAction(): ResponseInterface
+    {
+        return $this->htmlResponse($this->moduleTemplate->render());
+    }
 
     /**
      * @throws RouteNotFoundException
@@ -114,11 +119,28 @@ class BackendController extends ActionController
         $url = (string)$this->backendUriBuilder->buildUriFromRoute($moduleName, $uriParameters);
         $button = $this->buildButton('actions-file-text', 'Dynamic Imports in JS', 'btn-md btn-secondary rounded', $url);
         $buttonBar->addButton($button);
+
+        // custom template button
+        $uriParameters['action'] = 'customTemplateButton';
+        $url = (string)$this->backendUriBuilder->buildUriFromRoute($moduleName, $uriParameters);
+        $button = $this->buildCustomButton('actions-file-text', 'Custom button', 'btn-md btn-secondary mx-2 rounded', $url);
+        $buttonBar->addButton($button);
     }
 
     protected function buildButton(string $iconIdentifier, string $title, string $classes, string $url): LinkButton
     {
         $button = GeneralUtility::makeInstance(LinkButton::class);
+        return $button
+            ->setIcon($this->iconFactory->getIcon($iconIdentifier, Icon::SIZE_SMALL))
+            ->setTitle($title)
+            ->setShowLabelText(true)
+            ->setClasses($classes)
+            ->setHref($url);
+    }
+
+    protected function buildCustomButton(string $iconIdentifier, string $title, string $classes, string $url): CustomLinkButton
+    {
+        $button = GeneralUtility::makeInstance(CustomLinkButton::class);
         return $button
             ->setIcon($this->iconFactory->getIcon($iconIdentifier, Icon::SIZE_SMALL))
             ->setTitle($title)

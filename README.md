@@ -18,7 +18,9 @@ Shows the basic structure of a backend module (TYPO3 CMS)
 
 1.6.0: Added inline language file
 
-1.7.0 Added example for dynamic imports in javascript
+1.7.0: Added example for dynamic imports in javascript
+
+1.8.0: Added custom template button example
 
 ## Installation
 
