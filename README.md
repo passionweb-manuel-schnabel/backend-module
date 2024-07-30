@@ -24,6 +24,8 @@ Shows the basic structure of a backend module (TYPO3 CMS)
 
 1.9.0: Added custom toolbar item example
 
+1.10.0: Added custom button to list module example
+
 ## Installation
 
 * Add repository to your composer.json

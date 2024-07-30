@@ -16,4 +16,10 @@ return function (ContainerConfigurator $configurator, ContainerBuilder $containe
     $services->load('Passionweb\\BackendModule\\', __DIR__ . '/../Classes/')->exclude([
         __DIR__ . '/../Classes/Domain/Model',
     ]);
+
+    $services->set(\Passionweb\BackendModule\EventListener\ModifyButtonBarEventListener::class)
+        ->tag('event.listener', [
+            'method' => '__invoke',
+            'event' => 'TYPO3\\CMS\\Backend\\Template\\Components\\ModifyButtonBarEvent',
+        ]);
 };
