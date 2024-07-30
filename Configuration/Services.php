@@ -22,4 +22,10 @@ return function (ContainerConfigurator $configurator, ContainerBuilder $containe
             'method' => '__invoke',
             'event' => 'TYPO3\\CMS\\Backend\\Template\\Components\\ModifyButtonBarEvent',
         ]);
+
+    $services->set(\Passionweb\BackendModule\EventListener\ModifyNewContentElementWizardItemsEventListener::class)
+        ->tag('event.listener', [
+            'method' => '__invoke',
+            'event' => 'TYPO3\\CMS\\Backend\\Controller\\Event\\ModifyNewContentElementWizardItemsEvent',
+        ]);
 };

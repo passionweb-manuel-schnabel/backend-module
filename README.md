@@ -26,6 +26,8 @@ Shows the basic structure of a backend module (TYPO3 CMS)
 
 1.10.0: Added custom button to list module example
 
+1.11.0: Added example for modifying the NewContentElementWizard
+
 ## Installation
 
 * Add repository to your composer.json
