@@ -61,6 +61,7 @@ class BackendController extends ActionController
     }
     public function notificationsAction(): ResponseInterface
     {
+        $this->pageRenderer->addInlineLanguageLabelFile('EXT:backend_module/Resources/Private/Language/locallang.xlf');
         $this->pageRenderer->loadJavaScriptModule('@passionweb/backend-module/backend/notifications.js');
         return $this->htmlResponse($this->moduleTemplate->render());
     }

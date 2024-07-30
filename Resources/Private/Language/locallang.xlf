@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="EXT:backend_module/Resources/Private/Language/locallang.xlf" date="2024-04-11UTC21:34:060" product-name="backend_module">
+        <body>
+            <trans-unit id="notification.successMessage">
+                <source>This is a success message</source>
+            </trans-unit>
+            <trans-unit id="notification.infoMessage">
+                <source>This is an info message</source>
+            </trans-unit>
+            <trans-unit id="notification.warningMessage">
+                <source>This is a warning message</source>
+            </trans-unit>
+            <trans-unit id="notification.errorMessage">
+                <source>This is an error message</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

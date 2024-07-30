@@ -16,6 +16,8 @@ Shows the basic structure of a backend module (TYPO3 CMS)
 
 1.5.0: Add Notification API examples
 
+1.6.0: Add inline language file
+
 ## Installation
 
 * Add repository to your composer.json
